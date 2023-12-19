@@ -4,4 +4,4 @@ This PL/SQL stored function is designed to calculate tax for employees based on 
 
 1. If the annual salary is greater than $10,000, the tax rate is 10%.
 2. If the annual salary is greater than $15,000, the tax rate is 20%.
-3. If the annual salary is greater than $20,000, the tax rate is 30%.
+3. If the annual salary is greater than $20,000, the tax rate is 30%
