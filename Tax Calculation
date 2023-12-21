@@ -1,0 +1,45 @@
+                         FUNCTIONS
+================================================================================
+                              TAX CALCULATION
+--------------------------------------------------------------------------------
+Write a PLSQL stored function for passing empno as parameter, calculate tax based 
+on following condition using emp table
+1) If annual sal>10,000 then tax-->10%
+2) If annual sal>15,000 then tax-->20%
+3) If annual sal>20,000 then tax-->30%
+
+create or replace function f1(p_empno number)
+return number
+is
+tax number(10);
+v_sal number(10);
+annual_sal number(10);
+Begin
+select sal into v_sal from emp1
+where empno=p_empno;
+
+annual_sal:=v_sal*12;
+
+if annual_sal>10000 and annual_sal<=15000 then
+tax:=annual_sal*.10;
+
+elsif annual_sal>15000 and annual_sal<=20000 then
+tax:=annual_sal*.20;
+
+elsif annual_sal>20000 then
+tax:=annual_sal*.30;
+
+else tax:=0;
+end if;
+
+return tax;
+End;
+
+-------------
+
+select * from emp1;
+
+select f1(7900) from dual;
+
+================================================================================
+
